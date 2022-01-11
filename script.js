@@ -2,7 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-var passSymb = "!@#$%^&*_-+=";
 // var password = generatePassword();
 
 function writePassword() {
@@ -58,10 +57,21 @@ function writePassword() {
   }
   console.log(numSign);
 
+  // special characters question
+  var passSymb = confirm("Use special characters?");
+  if (passSymb) {
+    var passSymb = "!@#$%^&*_-+=";
+  } else {
+    // notification in case it isn't clear what cancel does
+    var passSymb = "";
+    var symSign = "Special characters will not be used..";
+  }
+  console.log(symSign);
+
   // passLower = passLower.toUpperCase();
 
   var passwordText = document.querySelector("#password");
-  passwordText.value = passNumber;
+  passwordText.value = passSymb;
   document.getElementById("password").style.color = "orange";
 }
 
