@@ -2,12 +2,11 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-var passUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var passNumber = "0123456789";
 var passSymb = "!@#$%^&*_-+=";
 // var password = generatePassword();
 
 function writePassword() {
+  var passwordText = document.querySelector("#password");
   // password length is restricted to only numbers and cannot be too short or too long
   var passLength = window.prompt(
     "Password Length:",
@@ -35,9 +34,6 @@ function writePassword() {
     var passLower = "";
     var lowSign = "lowercase characters will NOT be used..";
   }
-  var passwordText = document.querySelector("#password");
-  passwordText.value = lowSign;
-  document.getElementById("password").style.color = "orange";
   console.log(lowSign);
 
   // solution to UPPERCASE characters, instead of using if x=y or yes, and filtering other choices
@@ -51,10 +47,21 @@ function writePassword() {
   }
   console.log(hiSign);
 
+  // numeric characters solution
+  var passNumber = confirm("Use numeric characters?");
+  if (passNumber) {
+    var passNumber = "0123456789";
+  } else {
+    // notification in case it isn't clear what cancel does
+    var passNumber = "";
+    var numSign = "Numeric characters will not be used..";
+  }
+  console.log(numSign);
+
   // passLower = passLower.toUpperCase();
 
   var passwordText = document.querySelector("#password");
-  passwordText.value = passUpper;
+  passwordText.value = passNumber;
   document.getElementById("password").style.color = "orange";
 }
 
