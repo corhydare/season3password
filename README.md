@@ -1,5 +1,9 @@
 # season3password
 
+## Description
+
+Instructions are as follows:
+
 ```
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
