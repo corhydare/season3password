@@ -14,7 +14,7 @@ function writePassword() {
     "Numbers only, between 8 and 128"
   );
 
-  if (passLength == NaN) {
+  if (isNaN(passLength)) {
     alert("Invalid length. Defaulting to 8...");
     var passLength = 8;
   } else if (passLength < 8) {
@@ -33,7 +33,7 @@ function writePassword() {
   passLower = passLower.toUpperCase();
 
   var passwordText = document.querySelector("#password");
-  passwordText.value = password;
+  passwordText.value = passLength;
 }
 
 // Add event listener to generate button
