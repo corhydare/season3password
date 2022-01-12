@@ -116,7 +116,6 @@ function askSym() {
     // notification in case it isn't clear what cancel does
     var passSymb = "";
     var symSign = "Special characters will not be used..";
-    // validation
   }
   const validation = document.getElementById("validation");
   validation.innerHTML = symSign;
