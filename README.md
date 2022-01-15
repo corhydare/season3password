@@ -3,6 +3,7 @@
 ## Description
 
 Simple password generator, that should not be used for high security needs, as it uses random math function insterad of crypto.
+
 Published at: https://corhydare.github.io/season3password/
 
 Instructions are as follows:
