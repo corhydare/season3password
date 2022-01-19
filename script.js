@@ -2,7 +2,15 @@
 var generateBtn = document.querySelector("#generate");
 // global variable
 var passLength = 0;
-
+var passNumber = "";
+var numSign;
+var passLower = "";
+var lowSign;
+var passUpper = "";
+var hiSign;
+var passSymb = "";
+var symSign;
+var password = "";
 // because browsers are single thread solvers, the HTML cannot be updated until the code has finished.
 // even when broken into separate functions chrome waits until the entire script finishes?
 // I must be doing something wrong...
@@ -35,8 +43,7 @@ function askLength() {
 generateBtn.addEventListener("click", askLength);
 
 // gloablizing the variable
-var passLower = "";
-var lowSign;
+
 function askLow() {
   // lowercase characters solution without prompt. Prompt invites unnecesary complexity and opions. People are almost always happier with less choices.
   var passLower = window.prompt(
@@ -59,8 +66,7 @@ function askLow() {
 }
 generateBtn.addEventListener("click", askLow);
 // gloablizing the variable
-var passUpper = "";
-var hiSign;
+
 function askHi() {
   // solution to UPPERCASE characters, instead of using if x=y or yes, and filtering other choices
   var passUpper = window.prompt(
@@ -83,8 +89,7 @@ function askHi() {
 }
 generateBtn.addEventListener("click", askHi);
 // gloablizing the variable
-var passNumber = "";
-var numSign;
+
 function askNum() {
   // numeric characters solution
   var passNumber = confirm("Use numeric characters?");
@@ -104,8 +109,7 @@ function askNum() {
 }
 generateBtn.addEventListener("click", askNum);
 // gloablizing the variable
-var passSymb = "";
-var symSign;
+
 function askSym() {
   // special characters question
   var passSymb = confirm("Use special characters?");
@@ -116,6 +120,7 @@ function askSym() {
     // notification in case it isn't clear what cancel does
     var passSymb = "";
     var symSign = "Special characters will not be used..";
+    // validation
   }
   const validation = document.getElementById("validation");
   validation.innerHTML = symSign;
@@ -126,7 +131,6 @@ function askSym() {
 generateBtn.addEventListener("click", askSym);
 
 function writePassword() {
-  var password = "";
   // Combine all of the selected characters
   var alpha = passLower.concat(passUpper, passSymb, passNumber);
 
